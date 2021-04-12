@@ -1,0 +1,32 @@
+[
+  {
+    "email":"jfcc@mimail.com",
+    "userName": "jfcc",
+    "password": "holasoyyo",
+    "personalCart": {
+      "articles": []
+    }
+  },
+  {
+    "email":"jfcc@miotromail.com",
+    "userName": "jfcc1234",
+    "password": "holasoyyo",
+    "personalCart": {
+      "articles": [
+        {
+          "productId":1,
+          "name":"Desmalezadora",
+          "brand":"Makita",
+          "quantity":1
+        },
+        {
+          "productId":5,
+          "name":"Zapatillas Deportivas",
+          "brand":"Nike",
+          "quantity":2
+        }
+      ]
+    }
+  }
+
+]
