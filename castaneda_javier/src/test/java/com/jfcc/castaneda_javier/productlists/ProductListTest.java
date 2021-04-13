@@ -2,8 +2,13 @@ package com.jfcc.castaneda_javier.productlists;
 
 import com.jfcc.castaneda_javier.dto.ProductDTO;
 import com.jfcc.castaneda_javier.dto.ProductShowDTO;
+import com.jfcc.castaneda_javier.repositories.comparators.NameAsc;
+import com.jfcc.castaneda_javier.repositories.comparators.NameDesc;
+import com.jfcc.castaneda_javier.repositories.comparators.PriceAsc;
+import com.jfcc.castaneda_javier.repositories.comparators.PriceDesc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductListTest {
@@ -226,6 +231,48 @@ public class ProductListTest {
 
         return prodShows;
 
+    }
+
+    public static List<ProductDTO> productsFromFile(){
+        List<ProductDTO> products = Arrays.asList(new ProductDTO[]{
+                new ProductDTO(1, "Desmalezadora", "Herramientas", "Makita", 9600, 5, true, 4),
+                new ProductDTO(2, "Taladro", "Herramientas", "Black & Decker", 12500, 7, true, 4),
+                new ProductDTO(3, "Soldadora", "Herramientas", "Black & Decker", 7215, 10, true, 3),
+                new ProductDTO(4, "Zapatillas Deportivas", "Deportes", "Adidas", 13650, 6, true, 5),
+                new ProductDTO(5, "Zapatillas Deportivas", "Deportes", "Nike", 14000, 4, true, 5),
+                new ProductDTO(6, "Camiseta", "Deportes", "Topper", 2300, 2, false, 3),
+                new ProductDTO(7, "Redmi Note 9", "Celulares", "Xiaomi", 40000, 15, true, 4),
+                new ProductDTO(8, "Smartwatch", "Celulares", "Noga", 1900, 20, false, 2),
+                new ProductDTO(9, "Remera", "Indumentaria", "Taverniti", 2300, 2, false, 3),
+                new ProductDTO(10, "Chomba", "Indumentaria", "Taverniti", 2400, 6, false, 3),
+                new ProductDTO(11, "Medias", "Indumentaria", "Mistral", 500, 8, false, 1),
+                new ProductDTO(12, "Short", "Indumentaria", "Lacoste", 3900, 9, true, 3)});
+
+        return products;
+    }
+
+    public static List<ProductDTO> productSFromFileOrderAlf(){
+        List<ProductDTO> products = productsFromFile();
+        products.sort(new NameAsc());
+        return products;
+    }
+
+    public static List<ProductDTO> productSFromFileOrderAlfInverse(){
+        List<ProductDTO> products = productsFromFile();
+        products.sort(new NameDesc());
+        return products;
+    }
+
+    public static List<ProductDTO> productSFromFileOrderPrice(){
+        List<ProductDTO> products = productsFromFile();
+        products.sort(new PriceDesc());
+        return products;
+    }
+
+    public static List<ProductDTO> productSFromFileOrderPriceInverse(){
+        List<ProductDTO> products = productsFromFile();
+        products.sort(new PriceAsc());
+        return products;
     }
 
 }
