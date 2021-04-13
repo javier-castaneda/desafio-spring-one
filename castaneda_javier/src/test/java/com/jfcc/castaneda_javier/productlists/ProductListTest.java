@@ -24,6 +24,18 @@ public class ProductListTest {
         return prod;
     }
 
+    public static List<ProductDTO> filterFourProducts() {
+        List<ProductDTO> prod = new ArrayList<>();
+
+        ProductDTO product3 = new ProductDTO(3,"Destornillador","Herramienta", "Paquita", 180, 6,true,5);
+        ProductDTO product4 = new ProductDTO(4,"Martillo","Herramienta", "Klein", 800, 8,false,4);
+
+        prod.add(product3);
+        prod.add(product4);
+
+        return prod;
+    }
+
     public static List<ProductShowDTO> fourProductShow(){
 
         List<ProductShowDTO> prodShows = new ArrayList<>();
